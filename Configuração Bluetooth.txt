@@ -1,0 +1,67 @@
+
+Os modulos bluetooth se configurar com apenas o programa limpo:
+
+void setup(){
+}
+
+void loop(){
+}
+
+
+//------------------------------------------------------------
+
+Pinos do Bluetooth tem que ser paralelos ao do arduino PARA CONFIGURAÇÃO.
+
+Porta TX Bluetooth -> Porta TX do Arduino
+Porta RX Bluetooth -> Porta RX do Arduino
+
+
+Pinos do Bluetooth tem que ser inverso ao do arduino PARA SLAVE.
+
+Porta TX Bluetooth -> Porta RX do Arduino
+Porta RX Bluetooth -> Porta TX do Arduino
+
+
+Pinos do Bluetooth tem que ser nas suas respectivas portas declarada no codigo PARA MASTER.
+
+Porta TX Bluetooth -> Porta X do Arduino
+Porta RX Bluetooth -> Porta Y do Arduino
+
+//------------------------------------------------------------
+
+Comandos de configuração após a sua ligação correta de hardware
+AT+PSWD
++PSWD:1234
+
+AT+ROLE
++ROLE:1(MASTER)
+
+AT+CMODE = 1(CONECTAR EM QUALQUER DISPOSITIVO COM A MESMA SENHA)
+
+AT+UART=9600,1,0
+
+//------------------------------------------------------------
+
+Links para referencia:
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+http://www.instructables.com/id/How-to-Configure-HC-05-Bluetooth-Module-As-Master-/?ALLSTEPS
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+https://www.youtube.com/watch?v=mM1hFdxax_U
+
+https://www.youtube.com/watch?v=hyME1osgr7s
+
+//------------------------------------------------------------
+
+Usar SLAVE atraves do bluetooth do linux e sua porta serial:
+
+➜  ~ echo "R" > /dev/rfcomm0
+➜  ~ echo "G" > /dev/rfcomm0     
+➜  ~ echo "Y" > /dev/rfcomm0
+
+//------------------------------------------------------------
+
+Link para Referencia LCD 16x2:
+
+http://blog.filipeflop.com/display/controlando-um-lcd-16x2-com-arduino.html
